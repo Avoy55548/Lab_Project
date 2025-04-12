@@ -44,5 +44,6 @@ if (specialCharPattern.test(fullName)) {
         return;
     }
 
-    
+    alert("Form Submitted Successfully");
+
 });
