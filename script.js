@@ -43,4 +43,6 @@ if (specialCharPattern.test(fullName)) {
         alert("You must agree to the Terms and Conditions.");
         return;
     }
+
+    
 });
