@@ -45,5 +45,5 @@ if (specialCharPattern.test(fullName)) {
     }
 
     alert("Form Submitted Successfully");
-
+    document.querySelector("form").reset();
 });
