@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Layout</title>
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        width: 40%;
+        height: 80vh;
+      }
+      .column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #box-1,
+      #box-2 {
+        flex: 1;
+        background-color: bisque;
+      }
+      #box-2 {
+        background-color: burlywood;
+      }
+      #box-3 {
+        flex: 2;
+        background-color: skyblue;
+      }
+      #box-4 {
+        flex: 1;
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Logo</h1>
+    <h1 style="text-align: center">Title</h1>
+    <div class="container">
+      <div class="column">
+        <div id="box-1" class="box">Box-1</div>
+        <div id="box-2" class="box">Box-2</div>
+      </div>
+      <div class="column">
+        <div id="box-3" class="box">
+          <form action="">
+            <label>Full Name:</label>
+            <input type="text" placeholder="FULL NAME" id="fullName"><br>
+            <label>Email:</label>
+            <input type="email" placeholder="Enter email" id="email"><br>
+            <label>Password:</label>
+            <input type="password" id="password1" placeholder="Enter Password"> <br>
+            <label>Confirm Password </label>
+            <input type="password" id="password2" placeholder="Enter Password"><br>
+            
+            <label>Location:</label>
+            <input type="text" placeholder="Enter Location"><br>
+            <label>zip Code:</label>
+            <input type="text" placeholder="Enter zip Code"><br>
+            <label for="">Prefferd City:</label>
+            <select name="City" id="city">
+              <option value="Dhaka">Dhaka</option>
+              <option value="chattogram">chattogram</option>
+              <option value="Barisal">Barisal</option>
+              <option value="Rajshahi">Rajshahi</option>
+            </select><br>
+            <input type="checkbox" >I agree to the Terms and Conditions</label><br>
+            <button id="checkBtn">Submit</button>
+
+          </form>
+        </div>
+        <div id="box-4" class="box">Box-4</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
