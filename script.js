@@ -37,5 +37,5 @@ if (specialCharPattern.test(fullName)) {
         alert("zip code must be at least 4 characters long.");
         return;
     }
-
+    
 });
