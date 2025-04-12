@@ -6,6 +6,7 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
     const password1 = document.getElementById("password1").value;
     const password2 = document.getElementById("password2").value;
     const zip= document.getElementById("zipCode").value;
+    const checkBox= document.getElementById("checkBox");
 
     const specialCharPattern = /[^a-zA-Z0-9 .]/;
 if (specialCharPattern.test(fullName)) {
@@ -37,5 +38,9 @@ if (specialCharPattern.test(fullName)) {
         alert("zip code must be at least 4 characters long.");
         return;
     }
-    
+
+     if (!checkBox.checked) {
+        alert("You must agree to the Terms and Conditions.");
+        return;
+    }
 });
