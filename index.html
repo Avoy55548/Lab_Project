@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Box Layout</title>
-    
+
     <style>
       * {
         margin: 0;
@@ -54,12 +54,23 @@
         background-color: cyan;
         margin: 5px;
       }
-    
-      
+
+      .checkbox-label {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .checkbox-label input[type="checkbox"] {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+      }
     </style>
   </head>
   <body>
-    <h1 style="text-align: center"><img src="snow.svg" alt="" srcset="" width="500" height="50"></h1>
+    <h1 style="text-align: center">
+      <img src="snow.svg" alt="" srcset="" width="500" height="50" />
+    </h1>
     <h1 style="text-align: center">Weather forecast</h1>
     <div class="container">
       <div class="column">
@@ -70,34 +81,50 @@
         <div id="box-3" class="box">
           <form action="">
             <label>Full Name:</label>
-            <input type="text" placeholder="FULL NAME" id="fullName"><br>
+            <input type="text" placeholder="FULL NAME" id="fullName" /><br />
             <label>Email:</label>
-            <input type="email" placeholder="Enter email" id="email"><br>
+            <input type="email" placeholder="Enter email" id="email" /><br />
             <label>Password:</label>
-            <input type="password" id="password1" placeholder="Enter Password"> <br>
+            <input
+              type="password"
+              id="password1"
+              placeholder="Enter Password"
+            />
+            <br />
             <label>Confirm Password: </label>
-            <input type="password" id="password2" placeholder="Enter Password"><br>
-            
+            <input
+              type="password"
+              id="password2"
+              placeholder="Enter Password"
+            /><br />
+
             <label>Location:</label>
-            <input type="text" placeholder="Enter Location"><br>
+            <input type="text" placeholder="Enter Location" /><br />
             <label>zip Code:</label>
-            <input type="text" placeholder="Enter zip Code" id="zipCode"><br>
+            <input
+              type="text"
+              placeholder="Enter zip Code"
+              id="zipCode"
+            /><br />
             <label for="">Prefferd City:</label>
             <select name="City" id="city">
               <option value="">--Choose a city--</option>
               <option value="Dhaka">Dhaka</option>
               <option value="chattogram">chattogram</option>
               <option value="Barisal">Barisal</option>
-              <option value="Rajshahi">Rajshahi</option>
-            </select><br>
+              <option value="Rajshahi">Rajshahi</option></select
+            ><br />
             <label for="colorSelect">Select Form Color:</label>
-            <input type="color">
-            <br>
+            <input type="color" />
+            <br />
 
-
-            <input type="checkbox" id="checkBox">I agree to the Terms and Conditions</label><br>
+            <label class="checkbox-label">
+              I agree to the Terms and Conditions
+              <input type="checkbox" id="checkBox" /> </label
+            ><br />
+            <br />
+            <br />
             <button id="checkBtn">Submit</button>
-
           </form>
         </div>
         <div id="box-4" class="box">Box-4</div>
