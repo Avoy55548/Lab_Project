@@ -9,10 +9,17 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
     const checkBox= document.getElementById("checkBox");
 
     const specialCharPattern = /[^a-zA-Z0-9 .]/;
-if (specialCharPattern.test(fullName)) {
-    alert("Special character detected in full name!");
-    return;
-}
+    const dotCount = (fullName.match(/\./g) || []).length;
+
+    if (specialCharPattern.test(fullName)) {
+        fullNameError.textContent = "Special character detected in full name!";
+        return;
+    }
+
+    if (dotCount > 1) {
+        fullNameError.textContent = "Full name cannot contain more than one dot.";
+        return;
+    }
 
 
     // Email format check: 22-48818-3@student.aiub.edu

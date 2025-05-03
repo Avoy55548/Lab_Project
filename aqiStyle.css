@@ -14,3 +14,9 @@
   background-color: lightgray;
   font-weight: bold;
 }
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
