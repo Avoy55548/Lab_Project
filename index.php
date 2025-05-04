@@ -45,6 +45,7 @@
         flex: 3;
         background-color: bisque;
       }
+
       #box-2 {
         flex: 1;
         background-color: burlywood;
@@ -101,7 +102,6 @@
         background-color: black;
       }
 
-      /* Styling for the agreement section */
       .agreement {
         display: flex;
         align-items: center;
@@ -136,46 +136,16 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>City1</td>
-                  <td>32°C</td>
-                </tr>
-                <tr>
-                  <td>City2</td>
-                  <td>23°C</td>
-                </tr>
-                <tr>
-                  <td>City3</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City4</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City5</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City6</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City7</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City8</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City9</td>
-                  <td>33°C</td>
-                </tr>
-                <tr>
-                  <td>City10</td>
-                  <td>33°C</td>
-                </tr>
+                <tr><td>City1</td><td>32°C</td></tr>
+                <tr><td>City2</td><td>23°C</td></tr>
+                <tr><td>City3</td><td>33°C</td></tr>
+                <tr><td>City4</td><td>33°C</td></tr>
+                <tr><td>City5</td><td>33°C</td></tr>
+                <tr><td>City6</td><td>33°C</td></tr>
+                <tr><td>City7</td><td>33°C</td></tr>
+                <tr><td>City8</td><td>33°C</td></tr>
+                <tr><td>City9</td><td>33°C</td></tr>
+                <tr><td>City10</td><td>33°C</td></tr>
               </tbody>
             </table>
           </div>
@@ -185,53 +155,45 @@
 
       <div class="column">
         <div id="box-3" class="box">
-          <form action="">
+          <form action="process.php" method="POST">
             <div class="form-group">
               <label>Full Name:</label>
-              <input type="text" placeholder="FULL NAME" id="fullName" />
+              <input type="text" name="fullName" placeholder="FULL NAME" id="fullName" />
             </div>
             <div id="fullNameError" class="error-message"></div>
 
             <div class="form-group">
               <label>Email:</label>
-              <input type="email" placeholder="Enter email" id="email" />
+              <input type="email" name="email" placeholder="Enter email" id="email" />
             </div>
             <div id="emailError" class="error-message"></div>
 
             <div class="form-group">
               <label>Password:</label>
-              <input
-                type="password"
-                id="password1"
-                placeholder="Enter Password"
-              />
+              <input type="password" name="password1" id="password1" placeholder="Enter Password" />
             </div>
             <div id="password1Error" class="error-message"></div>
 
             <div class="form-group">
               <label>Confirm Password:</label>
-              <input
-                type="password"
-                id="password2"
-                placeholder="Enter Password"
-              />
+              <input type="password" name="password2" id="password2" placeholder="Enter Password" />
             </div>
             <div id="password2Error" class="error-message"></div>
 
             <div class="form-group">
               <label>Location:</label>
-              <input type="text" placeholder="Enter Location" />
+              <input type="text" name="location" placeholder="Enter Location" />
             </div>
 
             <div class="form-group">
               <label>Zip Code:</label>
-              <input type="text" placeholder="Enter Zip Code" id="zipCode" />
+              <input type="text" name="zipCode" placeholder="Enter Zip Code" id="zipCode" />
             </div>
             <div id="zipCodeError" class="error-message"></div>
 
             <div class="form-group">
               <label>Preferred City:</label>
-              <select name="City" id="city">
+              <select name="city" id="city">
                 <option value="">--Choose a city--</option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Chattogram">Chattogram</option>
@@ -242,16 +204,16 @@
 
             <div class="form-group">
               <label>Select Form Color:</label>
-              <input type="color" id="color" />
+              <input type="color" name="color" id="color" />
             </div>
 
             <div class="agreement">
               I agree to the Terms and Conditions
-              <input type="checkbox" id="checkBox" />
+              <input type="checkbox" name="agreement" id="checkBox" />
             </div>
             <div id="checkBoxError" class="error-message"></div>
 
-            <button id="checkBtn">Submit</button>
+            <button id="checkBtn" name="submit">Submit</button>
           </form>
         </div>
 
