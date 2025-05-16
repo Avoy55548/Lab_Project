@@ -1,5 +1,5 @@
 function validateForm() {
-  // Get values
+  
   const fullName = document.getElementById("fullName").value.trim();
   const email = document.getElementById("email").value.trim();
   const password1 = document.getElementById("password1").value;
@@ -7,7 +7,7 @@ function validateForm() {
   const zip = document.getElementById("zipCode").value.trim();
   const checkBox = document.getElementById("checkBox");
 
-  // Get error elements
+
   const fullNameError = document.getElementById("fullNameError");
   const emailError = document.getElementById("emailError");
   const password1Error = document.getElementById("password1Error");
@@ -15,7 +15,6 @@ function validateForm() {
   const zipCodeError = document.getElementById("zipCodeError");
   const checkBoxError = document.getElementById("checkBoxError");
 
-  // Clear previous error messages
   fullNameError.textContent = "";
   emailError.textContent = "";
   password1Error.textContent = "";
@@ -23,7 +22,6 @@ function validateForm() {
   zipCodeError.textContent = "";
   checkBoxError.textContent = "";
 
-  // Validation flag
   let isValid = true;
 
   const specialCharPattern = /[^a-zA-Z0-9 .]/;
@@ -56,6 +54,26 @@ function validateForm() {
     isValid = false;
   }
 
+  if (dob) {
+    const birthDate = new Date(dob);
+    if (isNaN(birthDate.getTime())) {
+      document.getElementById("dobError").textContent = "Invalid Date of Birth.";
+      hasError = true;
+    } else {
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+  
+      if (age < 18) {
+        document.getElementById("dobError").textContent = "You must be at least 18 years old.";
+        hasError = true;
+      }
+    }
+  } 
+
   if (zip.length < 4) {
     zipCodeError.textContent = "Zip code must be at least 4 characters long.";
     isValid = false;
@@ -66,6 +84,6 @@ function validateForm() {
     isValid = false;
   }
 
-  // If everything is valid, allow the form to submit
+  
   return isValid;
 }
