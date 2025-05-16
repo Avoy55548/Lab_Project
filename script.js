@@ -6,6 +6,7 @@ function validateForm() {
   const password2 = document.getElementById("password2").value;
   const zip = document.getElementById("zipCode").value.trim();
   const checkBox = document.getElementById("checkBox");
+  const dob = document.getElementById("dob").value;
 
 
   const fullNameError = document.getElementById("fullNameError");
@@ -14,6 +15,7 @@ function validateForm() {
   const password2Error = document.getElementById("password2Error");
   const zipCodeError = document.getElementById("zipCodeError");
   const checkBoxError = document.getElementById("checkBoxError");
+  const dobError = document.getElementById("dobError");
 
   fullNameError.textContent = "";
   emailError.textContent = "";
@@ -21,6 +23,7 @@ function validateForm() {
   password2Error.textContent = "";
   zipCodeError.textContent = "";
   checkBoxError.textContent = "";
+  dobError.textContent = "";
 
   let isValid = true;
 

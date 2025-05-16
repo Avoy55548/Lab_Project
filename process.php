@@ -1,29 +1,27 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $fullName = htmlspecialchars($_POST['fullName'] ?? '');
+    $email = htmlspecialchars($_POST['email'] ?? '');
+    $password1 = htmlspecialchars($_POST['password1'] ?? '');
+    $password2 = htmlspecialchars($_POST['password2'] ?? '');
+    $dob = htmlspecialchars($_POST['dob'] ?? '');
+    $location = htmlspecialchars($_POST['location'] ?? '');
+    $zipCode = htmlspecialchars($_POST['zipCode'] ?? '');
+    $city = htmlspecialchars($_POST['city'] ?? '');
+    $color = htmlspecialchars($_POST['color'] ?? '');
+    $agreement = isset($_POST['agreement']) ? "Yes" : "No";
 
-echo "Hi " . $_POST['fullName'];
-echo "<br>Email: " . $_POST['email'];
-echo "<br>Password: " . $_POST['password1'];
-echo "<br>Confirm Password: " . $_POST['password2'];
-echo "<br>Location: " . $_POST['location'];
-echo "<br>Zip Code: " . $_POST['zipCode'];
-echo "<br>Preferred City: " . $_POST['city'];
-echo "<br>Selected Color: " . $_POST['color'];
-
-
-if (isset($_POST['agreement'])) {
-    echo "<br>Agreed to Terms: Yes";
+    echo "Hi " . $fullName . "<br>";
+    echo "Email: " . $email . "<br>";
+    echo "Password: " . $password1 . "<br>";
+    echo "Confirm Password: " . $password2 . "<br>";
+    echo "Date of Birth: " . $dob . "<br>";
+    echo "Location: " . $location . "<br>";
+    echo "Zip Code: " . $zipCode . "<br>";
+    echo "Preferred City: " . $city . "<br>";
+    echo "Selected Color: <span style='background-color: $color; padding: 0 10px;'>&nbsp;</span> " . $color . "<br>";
+    echo "Agreed to Terms: " . $agreement . "<br>";
 } else {
-    echo "<br>Agreed to Terms: No";
-}
-
-
-var_dump($_GET);
-
-if (isset($_POST['submit'])) {
-    if ($_POST['fullName'] != "") {
-        echo "<br>Submitted Name Again: " . $_POST['fullName'];
-    } else {
-        print_r("<br>NO DATA");
-    }
+    echo "No form data submitted.";
 }
 ?>
