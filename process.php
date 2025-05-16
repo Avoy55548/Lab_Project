@@ -11,16 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $color = htmlspecialchars($_POST['color'] ?? '');
     $agreement = isset($_POST['agreement']) ? "Yes" : "No";
 
-    echo "Hi " . $fullName . "<br>";
-    echo "Email: " . $email . "<br>";
-    echo "Password: " . $password1 . "<br>";
-    echo "Confirm Password: " . $password2 . "<br>";
-    echo "Date of Birth: " . $dob . "<br>";
-    echo "Location: " . $location . "<br>";
-    echo "Zip Code: " . $zipCode . "<br>";
-    echo "Preferred City: " . $city . "<br>";
-    echo "Selected Color: <span style='background-color: $color; padding: 0 10px;'>&nbsp;</span> " . $color . "<br>";
-    echo "Agreed to Terms: " . $agreement . "<br>";
+    echo "<h1>Form Submission Received</h1>";
+    echo "<p><strong>Full Name:</strong> $fullName</p>";
+    echo "<p><strong>Email:</strong> $email</p>";
+    echo "<p><strong>Date of Birth:</strong> $dob</p>";
+    echo "<p><strong>Location:</strong> $location</p>";
+    echo "<p><strong>City:</strong> $city</p>";
+    echo "<p><strong>Zip Code:</strong> $zipCode</p>";
+    echo "<p><strong>Favorite Color:</strong> $color</p>";
+    echo "<p><strong>Agreed to Terms:</strong> $agreement</p>";
 } 
 else {
     echo "No form data submitted.";
