@@ -1,12 +1,10 @@
-document.getElementById("checkBtn").addEventListener("click", (event) => {
-  event.preventDefault(); // Prevent form submission
-
+function validateForm() {
   // Get values
-  const fullName = document.getElementById("fullName").value;
-  const email = document.getElementById("email").value;
+  const fullName = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim();
   const password1 = document.getElementById("password1").value;
   const password2 = document.getElementById("password2").value;
-  const zip = document.getElementById("zipCode").value;
+  const zip = document.getElementById("zipCode").value.trim();
   const checkBox = document.getElementById("checkBox");
 
   // Get error elements
@@ -17,7 +15,7 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
   const zipCodeError = document.getElementById("zipCodeError");
   const checkBoxError = document.getElementById("checkBoxError");
 
-  // Clear all errors
+  // Clear previous error messages
   fullNameError.textContent = "";
   emailError.textContent = "";
   password1Error.textContent = "";
@@ -25,46 +23,49 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
   zipCodeError.textContent = "";
   checkBoxError.textContent = "";
 
-  // Validation
+  // Validation flag
+  let isValid = true;
+
   const specialCharPattern = /[^a-zA-Z0-9 .]/;
   const dotCount = (fullName.match(/\./g) || []).length;
 
   if (specialCharPattern.test(fullName)) {
     fullNameError.textContent = "Special character detected in full name!";
-    return;
+    isValid = false;
   }
+
   if (dotCount > 1) {
     fullNameError.textContent = "Full name cannot contain more than one dot.";
-    return;
+    isValid = false;
   }
 
   const emailPattern = /^\d{2}-\d{5}-\d@student\.aiub\.edu$/;
   if (!emailPattern.test(email)) {
     emailError.textContent =
       "Email must be in the format: xx-xxxxx-x@student.aiub.edu";
-    return;
+    isValid = false;
   }
 
   if (password1.length < 8) {
     password1Error.textContent = "Password must be at least 8 characters long.";
-    return;
+    isValid = false;
   }
 
   if (password1 !== password2) {
     password2Error.textContent = "Passwords do not match.";
-    return;
+    isValid = false;
   }
 
   if (zip.length < 4) {
     zipCodeError.textContent = "Zip code must be at least 4 characters long.";
-    return;
+    isValid = false;
   }
 
   if (!checkBox.checked) {
     checkBoxError.textContent = "You must agree to the Terms and Conditions.";
-    return;
+    isValid = false;
   }
 
-  alert("Form Submitted Successfully");
-  document.querySelector("form").reset();
-});
+  // If everything is valid, allow the form to submit
+  return isValid;
+}

@@ -11,7 +11,7 @@
 
 if (isset($_POST['submit'])) {
 
-    // Collect and validate individual inputs
+    
     $fullName = $_POST['fullName'] ?? '';
     $email = $_POST['email'] ?? '';
     $password1 = $_POST['password1'] ?? '';

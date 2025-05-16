@@ -136,16 +136,46 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>City1</td><td>32°C</td></tr>
-                <tr><td>City2</td><td>23°C</td></tr>
-                <tr><td>City3</td><td>33°C</td></tr>
-                <tr><td>City4</td><td>33°C</td></tr>
-                <tr><td>City5</td><td>33°C</td></tr>
-                <tr><td>City6</td><td>33°C</td></tr>
-                <tr><td>City7</td><td>33°C</td></tr>
-                <tr><td>City8</td><td>33°C</td></tr>
-                <tr><td>City9</td><td>33°C</td></tr>
-                <tr><td>City10</td><td>33°C</td></tr>
+                <tr>
+                  <td>City1</td>
+                  <td>32°C</td>
+                </tr>
+                <tr>
+                  <td>City2</td>
+                  <td>23°C</td>
+                </tr>
+                <tr>
+                  <td>City3</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City4</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City5</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City6</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City7</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City8</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City9</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City10</td>
+                  <td>33°C</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -155,28 +185,48 @@
 
       <div class="column">
         <div id="box-3" class="box">
-          <form action="process.php" method="POST">
+          <form action="demo.php" method="POST">
             <div class="form-group">
               <label>Full Name:</label>
-              <input type="text" name="fullName" placeholder="FULL NAME" id="fullName" />
+              <input
+                type="text"
+                name="fullName"
+                placeholder="FULL NAME"
+                id="fullName"
+              />
             </div>
             <div id="fullNameError" class="error-message"></div>
 
             <div class="form-group">
               <label>Email:</label>
-              <input type="email" name="email" placeholder="Enter email" id="email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                id="email"
+              />
             </div>
             <div id="emailError" class="error-message"></div>
 
             <div class="form-group">
               <label>Password:</label>
-              <input type="password" name="password1" id="password1" placeholder="Enter Password" />
+              <input
+                type="password"
+                name="password1"
+                id="password1"
+                placeholder="Enter Password"
+              />
             </div>
             <div id="password1Error" class="error-message"></div>
 
             <div class="form-group">
               <label>Confirm Password:</label>
-              <input type="password" name="password2" id="password2" placeholder="Enter Password" />
+              <input
+                type="password"
+                name="password2"
+                id="password2"
+                placeholder="Enter Password"
+              />
             </div>
             <div id="password2Error" class="error-message"></div>
 
@@ -187,7 +237,12 @@
 
             <div class="form-group">
               <label>Zip Code:</label>
-              <input type="text" name="zipCode" placeholder="Enter Zip Code" id="zipCode" />
+              <input
+                type="text"
+                name="zipCode"
+                placeholder="Enter Zip Code"
+                id="zipCode"
+              />
             </div>
             <div id="zipCodeError" class="error-message"></div>
 
@@ -213,7 +268,13 @@
             </div>
             <div id="checkBoxError" class="error-message"></div>
 
-            <button id="checkBtn" name="submit">Submit</button>
+            <input
+              type="submit"
+              id="checkBtn"
+              name="submit"
+              value="Submit"
+              onclick="return validateForm()"
+            />
           </form>
         </div>
 
