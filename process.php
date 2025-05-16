@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "Preferred City: " . $city . "<br>";
     echo "Selected Color: <span style='background-color: $color; padding: 0 10px;'>&nbsp;</span> " . $color . "<br>";
     echo "Agreed to Terms: " . $agreement . "<br>";
-} else {
+} 
+else {
     echo "No form data submitted.";
 }
 ?>
