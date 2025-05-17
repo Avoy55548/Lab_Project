@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if (isset($_POST["confirm"])) {
-
+        // inserting into database
         $con = mysqli_connect("localhost", "root", "", "aqi");
         $sql = "INSERT INTO `user`(`Full Name`, `Email`, `Password`, `DOB`, `Location`, `Zip Code`, `City`) 
         VALUES ('$fullName', '$email', '$password1', '$dob', '$location', '$zipCode', '$city')";
