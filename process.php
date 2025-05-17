@@ -12,20 +12,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $agreement = isset($_POST['agreement']) ? "Yes" : "No";
 
 
-    if (isset($_POST["confirm"])) { 
-        
+    if (isset($_POST["confirm"])) {
+
         setcookie('color', $color);
 
     }
-?>
+    ?>
 
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Form Submission</title>
     </head>
+
     <body>
         <h1>Form Submission Received</h1>
         <p><strong>Full Name:</strong> <?= $fullName ?></p>
@@ -41,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </form>
         <button><a href="index.html" style="text-decoration: none; color: inherit;">Cancel</a></button>
     </body>
+
     </html>
 
     <?php
