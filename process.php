@@ -36,15 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <body>
         <h1>Form Submission Received</h1>
+        <p><strong>Full Name:</strong> <?= $fullName ?></p>
+        <p><strong>Email:</strong> <?= $email ?></p>
+        <p><strong>Date of Birth:</strong> <?= $dob ?></p>
+        <p><strong>Location:</strong> <?= $location ?></p>
+        <p><strong>City:</strong> <?= $city ?></p>
+        <p><strong>Zip Code:</strong> <?= $zipCode ?></p>
+        <p><strong>Favorite Color:</strong> <?= $color ?></p>
+        <p><strong>Agreed to Terms:</strong> <?= $agreement ?></p>
         <form action="process.php" method="post">
-            <p><strong>Full Name:</strong> <?= $fullName ?></p>
-            <p><strong>Email:</strong> <?= $email ?></p>
-            <p><strong>Date of Birth:</strong> <?= $dob ?></p>
-            <p><strong>Location:</strong> <?= $location ?></p>
-            <p><strong>City:</strong> <?= $city ?></p>
-            <p><strong>Zip Code:</strong> <?= $zipCode ?></p>
-            <p><strong>Favorite Color:</strong> <?= $color ?></p>
-            <p><strong>Agreed to Terms:</strong> <?= $agreement ?></p>
             <input type="submit" name="confirm" value="confirm">
         </form>
         <button><a href="index.html" style="text-decoration: none; color: inherit;">Cancel</a></button>
