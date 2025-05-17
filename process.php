@@ -13,9 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if (isset($_POST["confirm"])) {
-
         setcookie('color', $color);
-
     }
     ?>
 
@@ -39,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <p><strong>Favorite Color:</strong> <?= $color ?></p>
         <p><strong>Agreed to Terms:</strong> <?= $agreement ?></p>
         <form action="process.php" method="post">
-            <input type="submit" name="confirm" value="Confirm">
+            <input type="submit" name="confirm" value="confirm">
         </form>
         <button><a href="index.html" style="text-decoration: none; color: inherit;">Cancel</a></button>
     </body>
