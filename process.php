@@ -1,5 +1,20 @@
 <?php
+session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_POST['fullName'])) {
+ $_SESSION['fullName'] = htmlspecialchars($_POST['fullName'] ?? '');
+    $_SESSION['email'] = htmlspecialchars($_POST['email'] ?? '');
+    $_SESSION['password1'] = htmlspecialchars($_POST['password1'] ?? '');
+    $_SESSION['password2']= htmlspecialchars($_POST['password2'] ?? '');
+    $_SESSION['dob'] = htmlspecialchars($_POST['dob'] ?? '');
+    $_SESSION['location'] = htmlspecialchars($_POST['location'] ?? '');
+    $_SESSION['zipCode'] = htmlspecialchars($_POST['zipCode'] ?? '');
+    $_SESSION['city'] = htmlspecialchars($_POST['city'] ?? '');
+    $_SESSION['color'] = htmlspecialchars($_POST['color'] ?? '');
+}
+
+
+    //...................
     $fullName = htmlspecialchars($_POST['fullName'] ?? '');
     $email = htmlspecialchars($_POST['email'] ?? '');
     $password1 = htmlspecialchars($_POST['password1'] ?? '');
@@ -13,15 +28,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if (isset($_POST["confirm"])) {
+        
+        // getting data from session
+        $fullName = $_SESSION['fullName'];
+        $Email= $_SESSION['email'];
+        $Password1 = $_SESSION['password1'];
+        $dob = $_SESSION['dob'];
+        $location = $_SESSION['location'];
+        $zipCode = $_SESSION['zipCode'];    
+        $city = $_SESSION['city'];
+        $Color = $_SESSION['color'];
+
         // inserting into database
         $con = mysqli_connect("localhost", "root", "", "aqi");
         $sql = "INSERT INTO `user`(`Full Name`, `Email`, `Password`, `DOB`, `Location`, `Zip Code`, `City`) 
-        VALUES ('$fullName', '$email', '$password1', '$dob', '$location', '$zipCode', '$city')";
+        VALUES ('$fullName', '$Email', '$Password1', '$dob', '$location', '$zipCode', '$city')";
         if (mysqli_query($con, $sql)) {
             echo "Inserted....";
         }
         //Cookie color fix
-        // setcookie('color', $color);
+        setcookie('bgcolor', $Color, time()+10);
     }
     ?>
 
@@ -53,7 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </html>
 
     <?php
-} else {
+}
+ else {
     echo "No form data submitted.";
 }
 ?>
