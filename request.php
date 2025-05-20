@@ -88,9 +88,8 @@
             <tr><td>Malaysia</td><td>Kuantan</td><td><input type="checkbox" name="city[]" value="Kuantan"></td></tr>
             <tr><td>Hong Kong</td><td>Tai Po</td><td><input type="checkbox" name="city[]" value="Tai Po"></td></tr>
             <tr><td>Hong Kong</td><td>Sha Tin</td><td><input type="checkbox" name="city[]" value="Sha Tin"></td></tr>
-            <tr><td>Turkey</td><td>Delhi</td><td><input type="checkbox" name="city[]" value="Delhi"></td></tr>
             <tr><td>Turkey</td><td>Kestel</td><td><input type="checkbox" name="city[]" value="Kestel"></td></tr>
-            <tr><td>India</td><td>Torbalı</td><td><input type="checkbox" name="city[]" value="Torbalı"></td></tr>
+            <tr><td>Turkey</td><td>Torbali</td><td><input type="checkbox" name="city[]" value="Torbali"></td></tr>
         </table>
         <br>
         <input type="submit" value="Submit">
