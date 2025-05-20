@@ -10,7 +10,7 @@ if (!empty($selectedCities)) {
         $cityList[] = "'" . mysqli_real_escape_string($con, $city) . "'";
     }
     $cityStr = implode(",", $cityList);
-    $sql = "SELECT `ID`, `City`, `Country`, `AQI` FROM `info` WHERE City IN ($cityStr)";
+    $sql = "SELECT `City`, `Country`, `AQI` FROM `info` WHERE City IN ($cityStr)";
     $result = mysqli_query($con, $sql);
 } else {
     $result = false;
@@ -64,14 +64,12 @@ if (!empty($selectedCities)) {
     <?php if ($result && mysqli_num_rows($result) > 0): ?>
     <table>
         <tr>
-            <th>ID</th>
             <th>City</th>
             <th>Country</th>
             <th>AQI</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)): ?>
         <tr>
-            <td><?= htmlspecialchars($row['ID']) ?></td>
             <td><?= htmlspecialchars($row['City']) ?></td>
             <td><?= htmlspecialchars($row['Country']) ?></td>
             <td><?= htmlspecialchars($row['AQI']) ?></td>
