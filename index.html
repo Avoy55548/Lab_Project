@@ -291,13 +291,17 @@
               <input type="text" id="lname" name="lname" />
             </div>
             
-            <div class="form-group">
-              <label for="loginPassword">Password:</label>
-              <input type="password" id="loginPassword" name="loginPassword" />
-            </div>
             
+              <form action="verification.php" method="post">
+                <div class="form-group">
+                  <label for="loginPassword">Password:</label>
+              <input type="password" id="loginPassword" name="loginPassword" />
+                </div>
+              
+              <input type="submit" name="login" value="login" id="checkBtn" />
+              </form>
 
-            <button type="button" id="checkBtn">Login</button>
+
           </form>
       </div>
     </div>
