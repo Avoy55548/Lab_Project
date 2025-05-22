@@ -288,18 +288,15 @@
           <form action="verification.php" method="post" style="justify-items: center;">
             <div class="form-group">
               <label for="Name">Name:</label>
-              <input type="text" id="lname" name="loginName" />
+              <input type="text" id="lname" name="loginName" required />
             </div>
-                <div class="form-group">
-                  <label for="loginPassword">Password:</label>
-              <input type="password" id="loginPassword" name="loginPassword" />
-                </div>
-              
-              <input type="submit" name="login" value="login" id="checkBtn" />
-              
-
-
+            <div class="form-group">
+              <label for="loginPassword">Password:</label>
+              <input type="password" id="loginPassword" name="loginPassword" required />
+            </div>
+            <input type="submit" name="login" value="login" id="checkBtn" />
           </form>
+        </div>
       </div>
     </div>
 

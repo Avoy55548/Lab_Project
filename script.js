@@ -90,3 +90,13 @@ function validateForm() {
   
   return isValid;
 }
+
+function login() {
+  const fullName = document.getElementById("fullName").value.trim();
+  const password = document.getElementById("password1").value;
+
+  if (Empty(fullName) && Empty(password)) {
+    alert("Please fill in the required fields.");
+    return;
+  }
+}
