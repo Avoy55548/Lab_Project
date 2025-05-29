@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_POST["login"])) {
-    $loginName = trim($_POST["loginName"] ?? '');
+    $loginEmail = trim($_POST["loginEmail"] ?? '');
     $loginPassword = trim($_POST["loginPassword"] ?? '');
 
     $con = mysqli_connect("localhost", "root", "", "aqi");
@@ -9,15 +9,15 @@ if (isset($_POST["login"])) {
         header("Location: index.html");
         exit();
     }
-    $sql = "SELECT * FROM user WHERE `Full Name` = ? AND `Password` = ?";
+    $sql = "SELECT * FROM user WHERE `Email` = ? AND `Password` = ?";
     $stmt = mysqli_prepare($con, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $loginName, $loginPassword);
+    mysqli_stmt_bind_param($stmt, "ss", $loginEmail, $loginPassword);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
     if ($row) {
-        $_SESSION["loginName"] = $loginName;
+        $_SESSION["loginEmail"] = $loginEmail;
         header("Location: request.php");
         exit();
     } else {
