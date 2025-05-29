@@ -9,7 +9,7 @@ if (count($selectedCities) > 10) {
 
 $cityList = [];
 if (!empty($selectedCities)) {
-    // Escape and quote each city for SQL
+    
     foreach ($selectedCities as $city) {
         $cityList[] = "'" . mysqli_real_escape_string($con, $city) . "'";
     }
