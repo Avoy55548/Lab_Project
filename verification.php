@@ -21,7 +21,10 @@ if (isset($_POST["login"])) {
         header("Location: request.php");
         exit();
     } else {
-        header("Location: index.html");
+        echo "<script>
+                    alert('Invalid email or password.'); 
+                    window.location.href='index.html';
+                </script>";
         exit();
     }
 }
