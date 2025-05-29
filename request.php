@@ -60,9 +60,34 @@
         input[type="submit"]:hover {
             background: #0056b3;
         }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: -20px;
+        }
     </style>
 </head>
 <body>
+    <div class="button-container">
+        <button onclick="window.location.href='index.html'" style="background:#6c757d;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;margin-right:10px;">Back</button>
+        <button onclick="window.location.href='index.html'" style="background:#dc3545;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;">Logout</button>
+    </div>
     <h2>Select City And Country </h2>
     <form action="show.php" method="post">
         <table>

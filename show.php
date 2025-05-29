@@ -1,7 +1,11 @@
 <?php
 $con = mysqli_connect("localhost", "root", "", "aqi");
-
 $selectedCities = $_POST['city'] ?? [];
+
+if (count($selectedCities) > 10) {
+    echo "<script>alert('You can select a maximum of 10 cities.'); window.location.href='request.php';</script>";
+    exit();
+}
 
 $cityList = [];
 if (!empty($selectedCities)) {
@@ -57,9 +61,29 @@ if (!empty($selectedCities)) {
         tr:hover {
             background: #e6f7ff;
         }
+        .button-container {
+            text-align: right;
+            margin: 20px;
+        }
+        .button-container button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .button-container button.logout {
+            background: #dc3545;
+        }
     </style>
 </head>
 <body>
+    <div class="button-container">
+        <button onclick="window.location.href='index.html'" style="background:#6c757d;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;margin-right:10px;">Back</button>
+        <button onclick="window.location.href='index.html'" class="logout">Logout</button>
+    </div>
     <h2>AQI Data for Selected Cities</h2>
     <?php if ($result && mysqli_num_rows($result) > 0): ?>
     <table>
