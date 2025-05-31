@@ -81,7 +81,7 @@ if (!empty($selectedCities)) {
 </head>
 <body>
     <div class="button-container">
-        <button onclick="window.location.href='index.html'" style="background:#6c757d;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;margin-right:10px;">Back</button>
+        <button onclick="window.location.href='request.php'" style="background:#6c757d;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;margin-right:10px;">Back</button>
         <button onclick="window.location.href='index.html'" class="logout">Logout</button>
     </div>
     <h2>AQI Data for Selected Cities</h2>
